@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "node ./src/infra/http/server.js",
+    "start": "node ./src/infra/http/Server.js",
     "test": "jest --watchAll",
     "test:commit": "jest --passWithNoTest --findRelatedTests",
     "test:report": "jest --coverage"
