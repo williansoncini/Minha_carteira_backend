@@ -23,7 +23,9 @@ server.use(routes);
 
 //5 O servidor ligar deve ser a ultima coisa que ele deve fazer
 //Antes ele deve carregar todas as coisas
-server.listen(process.env.PORT, () => {
+
+// server.listen(process.env.PORT, () => {
+server.listen(3333, () => {
     console.log('Server is running on 3333 port!');
 }); //3 vai ficar escutando as requisições
 
