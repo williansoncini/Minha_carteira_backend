@@ -10,4 +10,4 @@ Mongo = Mongo Atlas
 
 # EXEMPLO UPDATE
 
-![] (Gif_alteracao.gif)
+![alt text] (Gif_alteracao.gif)
