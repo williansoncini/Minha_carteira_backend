@@ -8,3 +8,6 @@ Clique no botão abaixo para exportas as rotas para o **insomnia**
 Aplicação = Heroku
 Mongo = Mongo Atlas
 
+# EXEMPLO UPDATE
+
+![] (Gif_alteracao.gif)

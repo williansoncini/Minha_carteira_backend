@@ -43,6 +43,25 @@ class FinanceRepository{
   async delete(movimentId){
     await mongo.collection('moviments').deleteOne({ _id: mongoose.Types.ObjectId(movimentId)})
   }
+
+  async update(movimentId,data){
+    const {title, type,date,frequency,amount,description} = data
+
+    console.log('Update - Finance Repository')
+    await mongo.collection('moviments').updateOne({ _id: mongoose.Types.ObjectId(movimentId)},
+    {$set:
+      {
+        title:title,
+        type:type,
+        date: date,
+        frequency: frequency,
+        amount: amount,
+        description: description
+      }
+    })
+
+    return null;
+  }
 }
 
 module.exports = FinanceRepository;

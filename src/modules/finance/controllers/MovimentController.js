@@ -2,7 +2,8 @@ const MovimentRegister = require('../services/MovimentRegister')
 const FinanceRepositoy = require('../repository/FinanceRepository');
 const MovimentListByUser = require('../services/MovimentListByUser');
 const MovimentShowByUser = require('../services/MovimentShowByUser');
-const MovimentDelete = require('../services/MovimentDelete')
+const MovimentDelete = require('../services/MovimentDelete');
+const MovimentUpdate = require('../services/MovimentUpdate');
 // const { json } = require('express');
 
 class MovimentController{
@@ -66,6 +67,21 @@ class MovimentController{
       const finance = await movimentShowByUser.execute(user_id,movimentShow)
 
       response.json(finance)
+    }
+
+    async update(request, response){
+      const financeRepository = new FinanceRepositoy();
+      const movimentUpdate = new MovimentUpdate(financeRepository);
+
+      const movimentId = request.params.id;
+      const data = request.body;
+
+      const dataUpdate = await movimentUpdate.execute(movimentId,data)
+
+      return dataUpdate
+      // if(menssage) return response.json(message)
+
+      // return response.status(200).send()
     }
 }
 
